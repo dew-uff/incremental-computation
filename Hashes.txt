@@ -1,0 +1,9 @@
+Hashes dos arquivos gerados:
+microdadosf_lote1final2.csv: 377633815ea81af840dc844d88440209
+microdadosf_lote2final2.csv: 63098718734cf038ca58c2d97409e3bc
+microdadosf_lote3final2.csv: 937634c9fbc86990fbd960308c7a9c9b
+microdadosf_lote4final2.csv: 495f24861b45894baaf975b49818d215
+microdadosf_lote5final2.csv: bea3198ad0070585049894d64a320ba7
+microdadosf_lote6final2.csv: 4f262c84387132d3476bafbeb1c8585a
+microdadosf_lote7final2.csv: 5fd56eef435cf416392207d36479ca17
+microdadosf_lote8final2.csv: 1a443b0bc16f05fa4e73a2f7350a7601
