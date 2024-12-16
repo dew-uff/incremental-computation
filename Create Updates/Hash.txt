@@ -1,0 +1,9 @@
+Hashes dos arquivos gerados:
+saida2_evolnovo1.csv: 9787da6e1b3410bea8ea7b9aaf23a9f4
+saida2_evolnovo2.csv: bdf20e2721658cc3ca2802ba859a12e2
+saida2_evolnovo3.csv: 614de08f0fd1d02b9c5212bfee1095cf
+saida2_evolnovo4.csv: 56b26495b7a8718d9422b2f2fa5f1a73
+saida2_evolnovo5.csv: 0cf9a18c770652229010758cf38383e2
+saida2_evolnovo6.csv: 461cf15935ce27a0bcfe5d4f97f268c9
+saida2_evolnovo7.csv: db8c8915c8e7ab81ef192c3acf1232fc
+saida2_evolnovo8.csv: e582ad14a9099061199f26734e85a70e
