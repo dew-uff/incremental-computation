@@ -1,0 +1,276 @@
+-- EstabInc1 -> EstabInc1New
+CREATE TABLE EstabInc1New AS
+SELECT
+    LPAD(COD_SEQ, 10, '0') AS COD_SEQ, -- Ajustar COD_SEQ com zeros à esquerda
+    COD_VERSAO_ESTAB,
+    COD_UFMUN,
+    COD_CLASSE_CNAE,
+    COD_NATJUR,
+    NUM_POA,
+    NUM_POT,
+    NUM_SAL,
+    DATA_INI,
+    DATA_FIM
+FROM EstabInc1;
+
+-- Adicionar chave primária
+ALTER TABLE EstabInc1New
+ADD PRIMARY KEY (COD_SEQ, COD_VERSAO_ESTAB);
+
+-- Adicionar chaves estrangeiras
+ALTER TABLE EstabInc1New
+ADD CONSTRAINT fk_cod_ufmun FOREIGN KEY (COD_UFMUN) REFERENCES CodMun (COD_UFMUN),
+ADD CONSTRAINT fk_cod_classe_cnae FOREIGN KEY (COD_CLASSE_CNAE) REFERENCES CodCnae (COD_CLASSE_CNAE),
+ADD CONSTRAINT fk_cod_natjur FOREIGN KEY (COD_NATJUR) REFERENCES CodNatJur (COD_NATJUR);
+
+-- Atualizar os dados com a lógica do resto da divisão por 5
+UPDATE EstabInc1New
+SET
+    NUM_POA = CASE WHEN NUM_POT % 5 < 4 THEN NUM_POA + 1 ELSE NUM_POA END,
+    NUM_POT = CASE WHEN NUM_POT % 5 < 4 THEN NUM_POT + 1 ELSE NUM_POT END,
+    NUM_SAL = CASE WHEN NUM_POT % 5 < 4 THEN NUM_SAL + 5 ELSE NUM_SAL + 2 END
+WHERE COD_VERSAO_ESTAB = 2;
+
+
+-- EstabInc2 -> EstabInc2New
+CREATE TABLE EstabInc2New AS
+SELECT
+    LPAD(COD_SEQ, 10, '0') AS COD_SEQ, -- Ajustar COD_SEQ com zeros à esquerda
+    COD_VERSAO_ESTAB,
+    COD_UFMUN,
+    COD_CLASSE_CNAE,
+    COD_NATJUR,
+    NUM_POA,
+    NUM_POT,
+    NUM_SAL,
+    DATA_INI,
+    DATA_FIM
+FROM EstabInc2;
+
+-- Adicionar chave primária
+ALTER TABLE EstabInc2New
+ADD PRIMARY KEY (COD_SEQ, COD_VERSAO_ESTAB);
+
+-- Adicionar chaves estrangeiras
+ALTER TABLE EstabInc2New
+ADD CONSTRAINT fk_cod_ufmun FOREIGN KEY (COD_UFMUN) REFERENCES CodMun (COD_UFMUN),
+ADD CONSTRAINT fk_cod_classe_cnae FOREIGN KEY (COD_CLASSE_CNAE) REFERENCES CodCnae (COD_CLASSE_CNAE),
+ADD CONSTRAINT fk_cod_natjur FOREIGN KEY (COD_NATJUR) REFERENCES CodNatJur (COD_NATJUR);
+
+-- Atualizar os dados com a lógica do resto da divisão por 5
+UPDATE EstabInc2New
+SET
+    NUM_POA = CASE WHEN NUM_POT % 5 < 4 THEN NUM_POA + 1 ELSE NUM_POA END,
+    NUM_POT = CASE WHEN NUM_POT % 5 < 4 THEN NUM_POT + 1 ELSE NUM_POT END,
+    NUM_SAL = CASE WHEN NUM_POT % 5 < 4 THEN NUM_SAL + 5 ELSE NUM_SAL + 2 END
+WHERE COD_VERSAO_ESTAB = 2;
+
+
+-- EstabInc3 -> EstabInc3New
+CREATE TABLE EstabInc3New AS
+SELECT
+    LPAD(COD_SEQ, 10, '0') AS COD_SEQ, -- Ajustar COD_SEQ com zeros à esquerda
+    COD_VERSAO_ESTAB,
+    COD_UFMUN,
+    COD_CLASSE_CNAE,
+    COD_NATJUR,
+    NUM_POA,
+    NUM_POT,
+    NUM_SAL,
+    DATA_INI,
+    DATA_FIM
+FROM EstabInc3;
+
+-- Adicionar chave primária
+ALTER TABLE EstabInc3New
+ADD PRIMARY KEY (COD_SEQ, COD_VERSAO_ESTAB);
+
+-- Adicionar chaves estrangeiras
+ALTER TABLE EstabInc3New
+ADD CONSTRAINT fk_cod_ufmun FOREIGN KEY (COD_UFMUN) REFERENCES CodMun (COD_UFMUN),
+ADD CONSTRAINT fk_cod_classe_cnae FOREIGN KEY (COD_CLASSE_CNAE) REFERENCES CodCnae (COD_CLASSE_CNAE),
+ADD CONSTRAINT fk_cod_natjur FOREIGN KEY (COD_NATJUR) REFERENCES CodNatJur (COD_NATJUR);
+
+-- Atualizar os dados com a lógica do resto da divisão por 5
+UPDATE EstabInc3New
+SET
+    NUM_POA = CASE WHEN NUM_POT % 5 < 4 THEN NUM_POA + 1 ELSE NUM_POA END,
+    NUM_POT = CASE WHEN NUM_POT % 5 < 4 THEN NUM_POT + 1 ELSE NUM_POT END,
+    NUM_SAL = CASE WHEN NUM_POT % 5 < 4 THEN NUM_SAL + 5 ELSE NUM_SAL + 2 END
+WHERE COD_VERSAO_ESTAB = 2;
+
+
+-- EstabInc4 -> EstabInc4New
+CREATE TABLE EstabInc4New AS
+SELECT
+    LPAD(COD_SEQ, 10, '0') AS COD_SEQ, -- Ajustar COD_SEQ com zeros à esquerda
+    COD_VERSAO_ESTAB,
+    COD_UFMUN,
+    COD_CLASSE_CNAE,
+    COD_NATJUR,
+    NUM_POA,
+    NUM_POT,
+    NUM_SAL,
+    DATA_INI,
+    DATA_FIM
+FROM EstabInc4;
+
+-- Adicionar chave primária
+ALTER TABLE EstabInc4New
+ADD PRIMARY KEY (COD_SEQ, COD_VERSAO_ESTAB);
+
+-- Adicionar chaves estrangeiras
+ALTER TABLE EstabInc4New
+ADD CONSTRAINT fk_cod_ufmun FOREIGN KEY (COD_UFMUN) REFERENCES CodMun (COD_UFMUN),
+ADD CONSTRAINT fk_cod_classe_cnae FOREIGN KEY (COD_CLASSE_CNAE) REFERENCES CodCnae (COD_CLASSE_CNAE),
+ADD CONSTRAINT fk_cod_natjur FOREIGN KEY (COD_NATJUR) REFERENCES CodNatJur (COD_NATJUR);
+
+-- Atualizar os dados com a lógica do resto da divisão por 5
+UPDATE EstabInc4New
+SET
+    NUM_POA = CASE WHEN NUM_POT % 5 < 4 THEN NUM_POA + 1 ELSE NUM_POA END,
+    NUM_POT = CASE WHEN NUM_POT % 5 < 4 THEN NUM_POT + 1 ELSE NUM_POT END,
+    NUM_SAL = CASE WHEN NUM_POT % 5 < 4 THEN NUM_SAL + 5 ELSE NUM_SAL + 2 END
+WHERE COD_VERSAO_ESTAB = 2;
+
+
+
+-- EstabInc5 -> EstabInc5New
+CREATE TABLE EstabInc5New AS
+SELECT
+    LPAD(COD_SEQ, 10, '0') AS COD_SEQ, -- Ajustar COD_SEQ com zeros à esquerda
+    COD_VERSAO_ESTAB,
+    COD_UFMUN,
+    COD_CLASSE_CNAE,
+    COD_NATJUR,
+    NUM_POA,
+    NUM_POT,
+    NUM_SAL,
+    DATA_INI,
+    DATA_FIM
+FROM EstabInc5;
+
+-- Adicionar chave primária
+ALTER TABLE EstabInc5New
+ADD PRIMARY KEY (COD_SEQ, COD_VERSAO_ESTAB);
+
+-- Adicionar chaves estrangeiras
+ALTER TABLE EstabInc5New
+ADD CONSTRAINT fk_cod_ufmun FOREIGN KEY (COD_UFMUN) REFERENCES CodMun (COD_UFMUN),
+ADD CONSTRAINT fk_cod_classe_cnae FOREIGN KEY (COD_CLASSE_CNAE) REFERENCES CodCnae (COD_CLASSE_CNAE),
+ADD CONSTRAINT fk_cod_natjur FOREIGN KEY (COD_NATJUR) REFERENCES CodNatJur (COD_NATJUR);
+
+-- Atualizar os dados com a lógica do resto da divisão por 5
+UPDATE EstabInc5New
+SET
+    NUM_POA = CASE WHEN NUM_POT % 5 < 4 THEN NUM_POA + 1 ELSE NUM_POA END,
+    NUM_POT = CASE WHEN NUM_POT % 5 < 4 THEN NUM_POT + 1 ELSE NUM_POT END,
+    NUM_SAL = CASE WHEN NUM_POT % 5 < 4 THEN NUM_SAL + 5 ELSE NUM_SAL + 2 END
+WHERE COD_VERSAO_ESTAB = 2;
+
+
+-- EstabInc6 -> EstabInc6New
+CREATE TABLE EstabInc6New AS
+SELECT
+    LPAD(COD_SEQ, 10, '0') AS COD_SEQ, -- Ajustar COD_SEQ com zeros à esquerda
+    COD_VERSAO_ESTAB,
+    COD_UFMUN,
+    COD_CLASSE_CNAE,
+    COD_NATJUR,
+    NUM_POA,
+    NUM_POT,
+    NUM_SAL,
+    DATA_INI,
+    DATA_FIM
+FROM EstabInc6;
+
+-- Adicionar chave primária
+ALTER TABLE EstabInc6New
+ADD PRIMARY KEY (COD_SEQ, COD_VERSAO_ESTAB);
+
+-- Adicionar chaves estrangeiras
+ALTER TABLE EstabInc6New
+ADD CONSTRAINT fk_cod_ufmun FOREIGN KEY (COD_UFMUN) REFERENCES CodMun (COD_UFMUN),
+ADD CONSTRAINT fk_cod_classe_cnae FOREIGN KEY (COD_CLASSE_CNAE) REFERENCES CodCnae (COD_CLASSE_CNAE),
+ADD CONSTRAINT fk_cod_natjur FOREIGN KEY (COD_NATJUR) REFERENCES CodNatJur (COD_NATJUR);
+
+-- Atualizar os dados com a lógica do resto da divisão por 5
+UPDATE EstabInc6New
+SET
+    NUM_POA = CASE WHEN NUM_POT % 5 < 4 THEN NUM_POA + 1 ELSE NUM_POA END,
+    NUM_POT = CASE WHEN NUM_POT % 5 < 4 THEN NUM_POT + 1 ELSE NUM_POT END,
+    NUM_SAL = CASE WHEN NUM_POT % 5 < 4 THEN NUM_SAL + 5 ELSE NUM_SAL + 2 END
+WHERE COD_VERSAO_ESTAB = 2;
+
+
+
+-- EstabInc7 -> EstabInc7New
+CREATE TABLE EstabInc7New AS
+SELECT
+    LPAD(COD_SEQ, 10, '0') AS COD_SEQ, -- Ajustar COD_SEQ com zeros à esquerda
+    COD_VERSAO_ESTAB,
+    COD_UFMUN,
+    COD_CLASSE_CNAE,
+    COD_NATJUR,
+    NUM_POA,
+    NUM_POT,
+    NUM_SAL,
+    DATA_INI,
+    DATA_FIM
+FROM EstabInc7;
+
+-- Adicionar chave primária
+ALTER TABLE EstabInc7New
+ADD PRIMARY KEY (COD_SEQ, COD_VERSAO_ESTAB);
+
+-- Adicionar chaves estrangeiras
+ALTER TABLE EstabInc7New
+ADD CONSTRAINT fk_cod_ufmun FOREIGN KEY (COD_UFMUN) REFERENCES CodMun (COD_UFMUN),
+ADD CONSTRAINT fk_cod_classe_cnae FOREIGN KEY (COD_CLASSE_CNAE) REFERENCES CodCnae (COD_CLASSE_CNAE),
+ADD CONSTRAINT fk_cod_natjur FOREIGN KEY (COD_NATJUR) REFERENCES CodNatJur (COD_NATJUR);
+
+-- Atualizar os dados com a lógica do resto da divisão por 5
+UPDATE EstabInc7New
+SET
+    NUM_POA = CASE WHEN NUM_POT % 5 < 4 THEN NUM_POA + 1 ELSE NUM_POA END,
+    NUM_POT = CASE WHEN NUM_POT % 5 < 4 THEN NUM_POT + 1 ELSE NUM_POT END,
+    NUM_SAL = CASE WHEN NUM_POT % 5 < 4 THEN NUM_SAL + 5 ELSE NUM_SAL + 2 END
+WHERE COD_VERSAO_ESTAB = 2;
+
+
+
+
+-- EstabInc8 -> EstabInc8New
+CREATE TABLE EstabInc8New AS
+SELECT
+    LPAD(COD_SEQ, 10, '0') AS COD_SEQ, -- Ajustar COD_SEQ com zeros à esquerda
+    COD_VERSAO_ESTAB,
+    COD_UFMUN,
+    COD_CLASSE_CNAE,
+    COD_NATJUR,
+    NUM_POA,
+    NUM_POT,
+    NUM_SAL,
+    DATA_INI,
+    DATA_FIM
+FROM EstabInc8;
+
+-- Adicionar chave primária
+ALTER TABLE EstabInc8New
+ADD PRIMARY KEY (COD_SEQ, COD_VERSAO_ESTAB);
+
+-- Adicionar chaves estrangeiras
+ALTER TABLE EstabInc8New
+ADD CONSTRAINT fk_cod_ufmun FOREIGN KEY (COD_UFMUN) REFERENCES CodMun (COD_UFMUN),
+ADD CONSTRAINT fk_cod_classe_cnae FOREIGN KEY (COD_CLASSE_CNAE) REFERENCES CodCnae (COD_CLASSE_CNAE),
+ADD CONSTRAINT fk_cod_natjur FOREIGN KEY (COD_NATJUR) REFERENCES CodNatJur (COD_NATJUR);
+
+-- Atualizar os dados com a lógica do resto da divisão por 5
+UPDATE EstabInc8New
+SET
+    NUM_POA = CASE WHEN NUM_POT % 5 < 4 THEN NUM_POA + 1 ELSE NUM_POA END,
+    NUM_POT = CASE WHEN NUM_POT % 5 < 4 THEN NUM_POT + 1 ELSE NUM_POT END,
+    NUM_SAL = CASE WHEN NUM_POT % 5 < 4 THEN NUM_SAL + 5 ELSE NUM_SAL + 2 END
+WHERE COD_VERSAO_ESTAB = 2;
+
+

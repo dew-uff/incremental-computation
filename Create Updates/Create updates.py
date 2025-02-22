@@ -122,6 +122,32 @@ def processar_arquivo(input_file, output_file, seed, datalist, a, b, c, INC):
     )
     df.loc[mask, 'DFIM'] = df['DINI'].shift(-1)[mask] - timedelta(seconds=1)
 
+
+
+
+
+# --- Bloco de ajustes finais para CODVER=2 ---
+mask_codver_2 = (df['CODVER'] == 2)
+mask_mod = (df['POTM'] % 5 < 4)
+
+# POAM: se POTM % 5 < 4, soma 1, senão mantém
+df.loc[mask_codver_2, 'POAM'] = np.where(mask_mod, df['POAM'] + 1, df['POAM'])
+
+# POTM: se POTM % 5 < 4, soma 1, senão mantém
+df.loc[mask_codver_2, 'POTM'] = np.where(mask_mod, df['POTM'] + 1, df['POTM'])
+
+# SALM: se POTM % 5 < 4, soma 5, senão soma 2
+df.loc[mask_codver_2, 'SALM'] = np.where(mask_mod, df['SALM'] + 5, df['SALM'] + 2)
+# --- fim do bloco ---
+
+# Finalmente, salva no CSV
+df.to_csv(output_file, index=False, float_format='%.0f', date_format='%Y-%m-%d %H:%M:%S')
+
+
+
+
+
+
     # Salvar no arquivo de saída
     df.to_csv(output_file, index=False, float_format='%.0f', date_format='%Y-%m-%d %H:%M:%S')
     print_tempo_execucao(start_time, f"Gravação do arquivo {output_file} concluída")
