@@ -1,0 +1,8 @@
+#TYPE	DESCRIPTION
+# a	base incremental (default=index)
+# b	incremental, variable batch update, (default=index)
+# c	incremental, fixed batch update, (default=index)
+# d	incremental, variable batch update, (noindex)
+# e	standard (index)
+# f	standard (default = noindex)
+# g	base incremental (noindex)
